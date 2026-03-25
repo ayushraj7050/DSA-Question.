@@ -1,28 +1,31 @@
-
-import java.util.Scanner;
-
 public class GCD {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-
-        // Prompt user for input
-        System.out.print("Enter first number: ");
-        int x = scanner.nextInt();
-
-        System.out.print("Enter second number: ");
-        int y = scanner.nextInt();
-
-        int smaller = x < y ? x : y;
-        int gcd = 1;
-
-        for (int i = 1; i <= smaller; i++) {
-            if (x % i == 0 && y % i == 0) {
-                gcd = i;
+        int a = 24;
+        int b = 36;
+        // Division Method
+        // while(a%b!=0){
+        //     int rem = a % b;
+        //     a = b;
+        //     b = rem;
+        // }
+        // System.out.println("GCD"+b);
+        // Subtraction method
+        while(a!=b){
+            if(a>b){
+                a = a-b;
             }
+            else{
+                b = b - a;
+            }
+            System.out.println("GCD"+ a );
         }
-
-        System.out.println("GCD of " + x + " and " + y + " is: " + gcd);
-
-        scanner.close();
+        // int min = a>b?b:a;
+        // while(min>0){
+        // if(a%min ==0 && b%min==0){
+            // System.out.println("GCD"+min);
+            // break;
+        // }
+        // min--;
+    // }
     }
 }

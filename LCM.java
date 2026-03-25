@@ -1,15 +1,17 @@
 public class LCM {
     public static void main(String[] args) {
-        int x = 4;
-        int y = 6;
-        int big = x>=y ? x:y;
-        while (true){
-         if(big % x ==0 && big % y ==0) { 
-            System.out.println("LCm of " + x + " and "+y + " is "+  big);
-            break;
-        }
-        big++;
-    }
-    }
+        int a = 12; 
+        int b = 24;
+        int aCpy = a;
+        int bCpy = b;
 
+        // GCD - Division Method
+        while(a%b!=0){
+            int rem = a % b;
+            a = b;
+            b = rem;
+        }
+        int lcm = (aCpy * bCpy) / b;
+        System.out.println(lcm);
+    }
 }
