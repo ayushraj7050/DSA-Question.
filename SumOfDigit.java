@@ -1,14 +1,16 @@
 public class SumOfDigit {
-    public static void main(String[] args){
-        int num = 123;
-        int sum =0;
-        while(num!=0){
-            int lastDigit = num % 10;
-            sum = sum + lastDigit;
-            num = num / 10;
+    static void sumOfDigit(int num,int sum){
+        if(num==0){
+            System.out.println(sum);
+            return;
         }
-        System.out.println(sum);
-
-
+        
+        int digit = num%10;
+        sum = sum + digit;
+        
+        sumOfDigit(num/10,sum);
+    }
+    public static void main(String[] args) {
+        sumOfDigit(123,0);
     }
 }
