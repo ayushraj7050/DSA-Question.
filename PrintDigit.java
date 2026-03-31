@@ -1,20 +1,16 @@
 public class PrintDigit {
-    public static void main (String[] args){
-        int num = 12345;
-        int cpy = num;
-        int count = 0;
-        while(cpy!=0){
-            count++;
-            cpy = cpy / 10;
+    static void printDigit(int num){
+        if (num==0) {
+            return;
+            
         }
-        while(num!=0){
-            int pow = (int) Math.pow(10,count-1);
-            int digit = num / pow;
-            System.out.println(digit);
-            num = num % pow;
-            count--;
-        }
-           
         
+        printDigit(num/10);
+        
+        System.out.println(num%10);
+    }
+    public static void main(String[] args) {
+        // int num = 12345;
+        printDigit(12345);
     }
 }
